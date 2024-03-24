@@ -1,0 +1,61 @@
+FUNC MAIN
+    TYPE STR
+    PUSH Enter a number to check if it's prime.
+    OUT
+    TYPE INT
+    IN
+    VAR INPUT
+    GETVAR INPUT
+    PUSHVAR INPUT
+    PUSH 2
+    IFB NOT
+    PUSH 0
+    VAR ALL
+    GETVAR ALL
+    PUSH 1
+    VAR I
+    GETVAR I
+    GOTO CHECK
+
+FUNC NOTP
+    TYPE STR
+    PUSH The number is not prime.
+    OUT
+    EXIT
+FUNC ISP
+    TYPE STR
+    PUSH The number is prime.
+    OUT
+    EXIT
+FUNC ADD1
+    TYPE INT
+    PUSHVAR ALL
+    PUSH 1
+    ADD
+FUNC CHECKP
+    PUSH ALL
+    PUSH 1
+    IFE
+    IF ISP
+    GOTO NOTP
+FUNC CHECK
+    TYPE INT
+    PUSHVAR INPUT
+    PUSHVAR I
+    MOD
+    PUSH 0
+    IFE
+    IF ADD1
+    PUSHVAR I
+    PUSH 1
+    ADD
+    GETVAR I
+    PUSHVAR I
+    PUSHVAR INPUT
+    IFE
+    IF CHECKP
+    PUSHVAR I
+    PUSH 1
+    ADD
+    GETVAR I
+    GOTO CHECK

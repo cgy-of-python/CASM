@@ -1,0 +1,95 @@
+FUNC MAIN
+    TYPE INT
+    IN
+    IN
+    VAR I
+    VAR J
+    GETVAR I
+    GETVAR J
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    PUSHVAR J
+    OUT
+    POP
+    TYPE STR
+    PUSH  + ;
+    OUT
+    TYPE INT
+    PUSHVAR I
+    OUT
+    POP
+    TYPE STR
+    PUSH  = ;
+    OUT
+    TYPE INT
+    PUSHVAR I
+    PUSHVAR J
+    ADD
+    OUT
+    ENDL
+    ;;;;;;;;;;;;;;;;;;;;;;;;
+    PUSHVAR J
+    OUT
+    POP
+    TYPE STR
+    PUSH  - ;
+    OUT
+    TYPE INT
+    PUSHVAR I
+    OUT
+    POP
+    TYPE STR
+    PUSH  = ;
+    OUT
+    TYPE INT
+    PUSHVAR I
+    PUSHVAR J
+    SUB
+    OUT
+    ENDL
+    ;;;;;;;;;;;;;;;;;;;;;;;;
+    PUSHVAR J
+    OUT
+    POP
+    TYPE STR
+    PUSH  * ;
+    OUT
+    TYPE INT
+    PUSHVAR I
+    OUT
+    POP
+    TYPE STR
+    PUSH  = ;
+    OUT
+    TYPE INT
+    PUSHVAR I
+    PUSHVAR J
+    MUL
+    OUT
+    ENDL
+    ;;;;;;;;;;;;;;;;;;;;;;;;;
+    PUSHVAR J
+    OUT
+    POP
+    TYPE STR
+    PUSH  / ;
+    OUT
+    TYPE INT
+    PUSHVAR I
+    OUT
+    POP
+    TYPE STR
+    PUSH  = ;
+    OUT
+    TYPE INT
+    PUSHVAR I
+    PUSHVAR J
+    DIV
+    OUT
+    TYPE STR
+    PUSH ......
+    OUT
+    TYPE INT
+    PUSHVAR I
+    PUSHVAR J
+    MOD
+    OUT

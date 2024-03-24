@@ -1,0 +1,26 @@
+FUNC MAIN
+    TYPE INT
+    PUSH 0
+    VAR I
+    GETVAR I
+    PUSHVAR I
+    GOTO LOOP
+    PUSH 100
+    OUT
+    EXIT
+
+FUNC LOOP
+    TYPE INT
+    PUSHVAR I
+    OUT
+    PUSH 1
+    ADD
+    TYPE CHAR
+    PUSH ,
+    OUT
+    TYPE INT
+    GETVAR I
+    PUSHVAR I
+    PUSH 100
+    IFB
+    IF LOOP
