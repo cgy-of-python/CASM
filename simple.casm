@@ -1,0 +1,80 @@
+FUNC MAIN
+    TYPE STR
+    PUSH I'm thinking a number!Guess it!
+    OUT
+    ENDL
+    TYPE INT
+    RAND 0 100
+    VAR RANDNUM
+    GETVAR RANDNUM
+    PUSH 0
+    VAR TIME
+    GETVAR TIME
+    VAR INPUT
+    GOTO GAME
+
+FUNC WIN
+    TYPE STR
+    PUSH Ahoy!You win!
+    OUT
+    EXIT
+
+FUNC LOSE
+    TYPE STR
+    PUSH Sorry,but you lose the game:(
+    OUT
+    EXIT
+
+FUNC BIG
+    TYPE STR
+    PUSH Too big!Try again!(;
+    OUT
+    TYPE INT
+    GOTO ADDONE
+
+FUNC SMALL
+    TYPE STR
+    PUSH Too small!Try again!(;
+    OUT
+    TYPE INT
+    GOTO ADDONE
+
+FUNC ADDONE
+    TYPE INT
+    PUSHVAR TIME
+    PUSH 1
+    ADD
+    GETVAR TIME
+    TYPE STR
+    PUSH You tried ;
+    OUT
+    TYPE INT
+    PUSHVAR TIME
+    OUT
+    TYPE STR
+    PUSH  times.)
+    OUT
+    ENDL
+    TYPE INT
+    PUSHVAR TIME
+    PUSH 10
+    IFS
+    IF LOSE
+    GOTO GAME
+
+FUNC GAME
+    TYPE INT
+    IN
+    GETVAR INPUT
+    PUSHVAR INPUT
+    PUSHVAR RANDNUM
+    IFE
+    IF WIN
+    PUSHVAR RANDNUM
+    PUSHVAR INPUT
+    IFB
+    IF BIG
+    PUSHVAR RANDNUM
+    PUSHVAR INPUT
+    IFS
+    IF SMALL
