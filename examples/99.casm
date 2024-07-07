@@ -1,0 +1,58 @@
+FUNC MAIN
+    TYPE INT
+    PUSH 1
+    VAR I
+    GETVAR I
+    GOTO LOOP
+    EXIT
+
+FUNC LOOP
+    PUSH 1
+    VAR J
+    GETVAR J
+    GOTO LOOP1
+    TYPE INT
+    PUSHVAR I
+    PUSH 1
+    ADD
+    GETVAR I
+    PUSHVAR I
+    PUSH 10
+    ENDL
+    IFB
+    IF LOOP
+
+FUNC LOOP1
+    ;OUTPUT
+    TYPE INT
+    PUSHVAR J
+    OUT
+    TYPE STR
+    PUSH  * ;
+    OUT
+    TYPE INT
+    PUSHVAR I
+    OUT
+    TYPE STR
+    PUSH  = ;
+    OUT
+    TYPE INT
+    PUSHVAR I
+    PUSHVAR J
+    MUL
+    OUT
+    TYPE STR
+    PUSH  ;
+    OUT
+    ;END OUTPUT
+    TYPE INT
+    PUSHVAR J
+    PUSH 1
+    ADD
+    GETVAR J
+    PUSHVAR J
+    PUSHVAR I
+    PUSH 1
+    ADD
+    IFB
+    IF LOOP1

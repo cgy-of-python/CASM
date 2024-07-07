@@ -573,15 +573,14 @@ class GUI:
         if self.saved:
             if not self.running:
                 self.save()
-                print(self.name[-5:])
                 if self.name[-5:] == '.casm':
                     path = self.name.split('/')
                     path = '\\'.join(path[:-1])
-                    cmd = f'{self.name[:2]} & cd \"{path}\\\" & casm.exe \"{self.name}\" & pause'  # 加‘&’连续执行cmd命令
+                    cmd = f'casm.exe \"{self.name}\" & pause'
                 elif self.name[-4:] == '.txt':
                     path = self.name.split('/')
                     path = '\\'.join(path[:-1])
-                    cmd = f'{self.name[:2]} & cd \"{path}\\\" & casm.exe \"{self.name}\"'
+                    cmd = f'casm.exe \"{self.name}\"'
                 else:
                     cmd = ''
 
@@ -606,11 +605,11 @@ class GUI:
                 if self.name[-5:] == '.casm':
                     path = self.name.split('/')
                     path = '\\'.join(path[:-1])
-                    cmd = f'{self.name[:2]} & cd \"{path}\\\" & casm.exe \"{self.name}\" --debug & pause'  # 加‘&’连续执行cmd命令
+                    cmd = f'casm.exe \"{self.name}\" --debug & pause'  # 加‘&’连续执行cmd命令
                 elif self.name[-4:] == '.txt':
                     path = self.name.split('/')
                     path = '\\'.join(path[:-1])
-                    cmd = f'{self.name[:2]} & cd \"{path}\\\" & casm.exe \"{self.name}\" --debug'
+                    cmd = f'casm.exe \"{self.name}\" --debug'
                 else:
                     cmd = ''
 

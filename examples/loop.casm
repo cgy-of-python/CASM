@@ -10,9 +10,11 @@ FUNC MAIN
     EXIT
 
 FUNC LOOP
+    CLEAR
     TYPE INT
     PUSHVAR I
     OUT
+    PUSHVAR I
     PUSH 1
     ADD
     TYPE CHAR
@@ -24,3 +26,4 @@ FUNC LOOP
     PUSH 100
     IFB
     IF LOOP
+
